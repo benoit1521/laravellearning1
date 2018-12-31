@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/add', function () {
+    $a = 1 + 5;
+
+    return $a;
+});
+
+Route::get('/a-propos', function () {
+    return 'À propos';
+});
+
+
+
+Route::get('/bonjour/{nom}', function () {
+    return view('bonjour', [
+        'prenom' => request('nom'),
+    ]);
+});
