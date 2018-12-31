@@ -25,10 +25,16 @@ Route::get('/a-propos', function () {
     return 'À propos';
 });
 
-
-
 Route::get('/bonjour/{nom}', function () {
     return view('bonjour', [
         'prenom' => request('nom'),
     ]);
+});
+
+Route::get('/inscription', function () {
+    return view('inscription');
+});
+
+Route::post('/inscription', function () {
+    return 'Votre email est ' . request('email');
 });
