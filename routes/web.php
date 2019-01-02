@@ -36,5 +36,5 @@ Route::get('/inscription', function () {
 });
 
 Route::post('/inscription', function () {
-    return 'Votre email est ' . request('email');
+    return 'Votre email est ' . $_POST['email'];
 });
