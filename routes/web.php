@@ -36,5 +36,11 @@ Route::get('/inscription', function () {
 });
 
 Route::post('/inscription', function () {
+
+    $utilisateur = new App\Utilisateurs;
+    $utilisateur->email = request('email');
+    $utilisateur->mot_de_passe = request('password');
+    $utilisateur->save();
+    
     return 'Votre email est ' . $_POST['email'];
 });
