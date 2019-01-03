@@ -17,6 +17,7 @@ class CreateUtilisateursTable extends Migration
             $table->increments('id');
             $table->string('email')->unique();
             $table->string('mot_de_passe');
+            $table->integer('age');
             $table->timestamps();
         });
     }
