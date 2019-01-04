@@ -58,4 +58,3 @@ Route::get('/utilisateurs/{age}', function(int $age){
     return view('utilisateurs')->with('utilisateurs',$utilisateurs);
 })->where('age','[0-9]+');
 
-
