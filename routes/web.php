@@ -55,6 +55,6 @@ Route::get('/utilisateurs/{age}', function(int $age){
     $utilisateurs = App\Utilisateurs::where('age','>',$age)
         ->orderBy('email', 'desc')
         ->get();
-    return view('utilisateurs')->with('utilisateurs',$utilisateurs);
+    return view('utilisateurs',['age'=> request('age'),])->with('utilisateurs',$utilisateurs);
 })->where('age','[0-9]+');
 
