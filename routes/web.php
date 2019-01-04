@@ -46,8 +46,16 @@ Route::post('/inscription', function () {
     return 'Votre email est ' . $_POST['email'];
 });
 
+// Route::get('/utilisateurs/{age}', function(int $age){
+//     $utilisateurs = App\Utilisateurs::all();
+//     return view('utilisateurs')->with('utilisateurs',$utilisateurs);
+// })->where('age','[0-9]+');
+
 Route::get('/utilisateurs/{age}', function(int $age){
-    $utilisateurs = App\Utilisateurs::all();
+    $utilisateurs = App\Utilisateurs::where('age','>',$age)
+        ->orderBy('email', 'desc')
+        ->get();
     return view('utilisateurs')->with('utilisateurs',$utilisateurs);
 })->where('age','[0-9]+');
+
 
