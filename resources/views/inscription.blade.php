@@ -7,6 +7,6 @@
         <input type="password" name="password" placeholder="Mot de passe">
         <input type="password" name="password_confirmation" placeholder="Mot de passe (confirmation)">
         <input type="number" name="age" placeholder="Age">
-        <input type="submit" value="M'inscrire">
+        <input type="submit" value="M'inscrire" class="btn btn-primary">
     </form>
 @endsection
